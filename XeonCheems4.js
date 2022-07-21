@@ -6055,6 +6055,16 @@ let audio = await toAudio(media, 'mp4')
 XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
 }
 break
+case 'donate' case 'donasi'
+reply('╭─「 Donasi • Pulsa 」
+│ • XL [087856297295]
+╰────
+
+╭─「 Donasi • Non Pulsa 」
+│ • https://saweria.co/Dhanzp
+│ • Dana [085825194354]
+╰────')
+break
 case 'tomp3': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -8681,6 +8691,13 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 XeonBotInc.sendContact(m.chat, global.vcardowner, m)
             }
             break
+            case 'iqra': {
+		oh = `Example : ${prefix + command} 3\n\nIQRA Yang tersedia : 1,2,3,4,5,6`
+		if (!text) throw oh
+		yy = await getBuffer(`https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra${text}`)
+		XeonBotInc.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf`}, {quoted:m}).catch ((err) => m.reply(oh))
+		}
+		break
   case 'setmenu': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -8760,7 +8777,7 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
-case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
+case 'sc': case 'script': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nDont forget to donate 🍜\nsaweria ; https://saweria.co/Dhanzp`
@@ -8945,7 +8962,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										{
 										"title": "Game Menu 🎮",
 										"description": "Displays The List Of Game Features",
-										"rowId": `${prefix}indomenu`
+										"rowId": `${prefix}gamemenu`
 									},
 										{
 											"title": "Convert Menu ⚒️",
