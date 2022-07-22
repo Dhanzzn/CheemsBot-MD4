@@ -6055,15 +6055,15 @@ let audio = await toAudio(media, 'mp4')
 XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
 }
 break
-case 'donate' case 'donasi'
-reply('╭─「 Donasi • Pulsa 」
+case 'donate':
+reply(`╭─「 Donasi • Pulsa 」
 │ • XL [087856297295]
 ╰────
 
 ╭─「 Donasi • Non Pulsa 」
 │ • https://saweria.co/Dhanzp
 │ • Dana [085825194354]
-╰────')
+╰────`)
 break
 case 'tomp3': {
    if (isBan) return reply(mess.ban)	 			
