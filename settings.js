@@ -62,7 +62,6 @@ global.location = "India, Mizoram, Aizawl" //ur location
 
 //bot bomdy 
 global.owner = ['6289514865606']
-global.ownertag = [] //ur tag number
 global.botname = 'ALDI - MD V4' //ur bot name
 global.linkz = "https://youtu.be/WiIqCdiDjFo" //your theme url which will be displayed on whatsapp
 global.websitex = "My Youtube : I'm Dhanzz" //ur website to be displayed
