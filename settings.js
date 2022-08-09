@@ -31,7 +31,7 @@ global.APIs = {
 
 //Api Key\\
 global.APIKeys = {
-	'https://zenzapis.xyz': 'your key',
+	'https://zenzapis.xyz': '7ed90d537ab5edddb6ba6465',
 }
 
 
@@ -54,15 +54,15 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.vcardowner = ['6283876006676'] //ur owner number
-global.ownername = "RELL STORE" //ur owner name
+global.vcardowner = ['6281250171353'] //ur owner number
+global.ownername = "Rinz" //ur owner name
 global.ytname = "YT: ALDI - MD" //ur yt chanel name
 global.socialm = "GitHub: DGXeon" //ur github or insta name
 global.location = "India, Mizoram, Aizawl" //ur location
 
 //bot bomdy 
-global.owner = ['6283876006676']
-global.botname = 'Rell Botz' //ur bot name
+global.owner = ['6281250171353']
+global.botname = 'Rinz Bot' //ur bot name
 global.linkz = "https://youtu.be/WiIqCdiDjFo" //your theme url which will be displayed on whatsapp
 global.websitex = "My Youtube : I'm Dhanzz" //ur website to be displayed
 global.botscript = 'Buy Ketik .owner' //script link
