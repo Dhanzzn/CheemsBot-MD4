@@ -54,15 +54,15 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.vcardowner = ['6281250171353'] //ur owner number
-global.ownername = "Rinz" //ur owner name
+global.vcardowner = ['6289514865606'] //ur owner number
+global.ownername = "ALDI STORE OFFICIAL" //ur owner name
 global.ytname = "YT: ALDI - MD" //ur yt chanel name
 global.socialm = "GitHub: DGXeon" //ur github or insta name
 global.location = "India, Mizoram, Aizawl" //ur location
 
 //bot bomdy 
-global.owner = ['6281250171353']
-global.botname = 'Rinz Bot' //ur bot name
+global.owner = ['6289514865606']
+global.botname = 'ALDI - MD V4' //ur bot name
 global.linkz = "https://youtu.be/WiIqCdiDjFo" //your theme url which will be displayed on whatsapp
 global.websitex = "My Youtube : I'm Dhanzz" //ur website to be displayed
 global.botscript = 'Buy Ketik .owner' //script link
