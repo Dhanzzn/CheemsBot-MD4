@@ -54,15 +54,15 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.vcardowner = ['6289514865606'] //ur owner number
-global.ownername = "ALDI STORE OFFICIAL" //ur owner name
+global.vcardowner = ['6288216411284'] //ur owner number
+global.ownername = "Dipta" //ur owner name
 global.ytname = "YT: ALDI - MD" //ur yt chanel name
 global.socialm = "GitHub: DGXeon" //ur github or insta name
 global.location = "India, Mizoram, Aizawl" //ur location
 
 //bot bomdy 
-global.owner = ['6289514865606']
-global.botname = 'ALDI - MD V4' //ur bot name
+global.owner = ['6288216411284']
+global.botname = 'Dipta Bot' //ur bot name
 global.linkz = "https://chat.whatsapp.com/CHR31dhtRQFGNsYWpnPKS9" //your theme url which will be displayed on whatsapp
 global.websitex = "My Youtube : I'm Dhanzz" //ur website to be displayed
 global.botscript = 'Buy Ketik .owner' //script link
@@ -105,14 +105,14 @@ global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
     success: 'Done ✓',
-    admin: 'This Feature Is Only For Admin!',
-    botAdmin: 'Bot Must Be Admin First!',
-    owner: 'This Feature Is Only For Owner!',
-    group: 'Feature Used Only For Groups!',
+    admin: '*Fitur Khusus Admin Group!!!*',
+    botAdmin: '*「BOT HARUS JADI ADMIN」*',
+    owner: '*Fitur Khusus Owner!!*',
+    group: '*Fitur Khusus Di Grup!!!*',
     private: 'Features Used Only For Private Chat!',
     bot: 'This Feature Is Only For Bot',
     wait: 'In process...',
-    linkm: 'Where is the link?',
+    linkm: 'Link Mane??',
     error: 'Error!!',
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
     ban: 'You have been banned by the owner, if you want to be unbanned, chat owner.',
