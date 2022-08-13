@@ -6056,13 +6056,14 @@ XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted 
 }
 break
 case 'donate':
-reply(`「 Donasi • SYN STORE 」
-│ • https://saweria.co/synstore
-│ • Dana [089637210173]
-│ • OVO [089637210173]
-│ • BCA [5725651080]
-│ • GOPAY [089637210173]
-╰─────`)
+reply(`╭─「 Donasi • Pulsa 」
+│ • XL [087856297295]
+╰────
+
+╭─「 Donasi • Non Pulsa 」
+│ • https://saweria.co/Dhanzp
+│ • Dana [085825194354]
+╰────`)
 break
 case 'tomp3': {
    if (isBan) return reply(mess.ban)	 			
