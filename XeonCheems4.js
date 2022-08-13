@@ -786,7 +786,7 @@ const emoji = new EmojiAPI();
 emoji.get(satu)
 .then(emoji => {
 const buttons = [{buttonId: "y", buttonText: {displayText:satu}, type: 1}]
-const buttonMessage = {image: {url: emoji.images[dua].url},caption: "✅ Done..Oke Desuu!!",footerText: `${botname}`,buttons: buttons,headerType: 4}
+const buttonMessage = {image: {url: emoji.images[dua].url},caption: "Here you go!",footerText: `${botname}`,buttons: buttons,headerType: 4}
 XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 })
 } catch (e) {
@@ -1096,7 +1096,7 @@ const latensie = speed() - timestampe
                 const menulist = `┌─❖
 │「 Hi 👋 」
 └┬❖ 「 ${pushname} 」
-┌┤✑  How Are You? 🗿🤙🏻
+┌┤✑  How Are You? 😄
 │└────────────┈ ⳹
 │
 └─「 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊 」       
@@ -1451,20 +1451,7 @@ if (isBanChat) return reply(mess.banChat)
 
  }
  break
-case 'tes':
-if (isBan)return sticBan(from)
-reply('*STATUS BOT : ONLINE*')
-break
-case 'listadmin':
-if (!m.isGroup) return sticGroup(from)
-teks = `List admin of group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
-no = 0
-for (let admon of groupAdmins) {
-no += 1
-teks += `[${no.toString()}] @${admon.split('@')[0]}\n`
-}
-mentions(teks, groupAdmins, true)
-break
+
  case 'heal':{
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -3024,6 +3011,10 @@ replay('Success in turning off autoreply in this group')
   }
   }
   break
+  case 'jepang':
+  hem = fs.readFileSync('./audio/jepang.mp3')
+  XeonBotInc.sendMessage(from, hem, messageType.audio, {quotes: mek, mimetype : 'audio/mp4', ptt:true})
+  bres ///dah kontol
 case 'antitoxic': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -6055,16 +6046,6 @@ let audio = await toAudio(media, 'mp4')
 XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
 }
 break
-case 'donate':
-reply(`╭─「 Donasi • Pulsa 」
-│ • XL [087856297295]
-╰────
-
-╭─「 Donasi • Non Pulsa 」
-│ • https://saweria.co/Dhanzp
-│ • Dana [085825194354]
-╰────`)
-break
 case 'tomp3': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -6690,7 +6671,7 @@ break
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
             let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
-            if (!args[0]) reply(`Use ${prefix}gitclone repo link\nExample: https://github.com/DGXeon/CheemsBot-MD4`)
+            if (!args[0]) reply(`Use ${prefix}gitclone repo link\nExample: https://github.com/Dhanzzn/api-mirip-lolhuman`)
     if (!regex1.test(args[0])) return reply(mess.linkm)
     let [, user, repo] = args[0].match(regex1) || []
     repo = repo.replace(/.git$/, '')
@@ -7975,7 +7956,46 @@ break
                 XeonBotInc.sendText(m.chat, `${themeemoji} *Results :* ${anu.message}`, m)
             }
             break
-	    case 'tiktok':{
+            case 'tiktok':
+                if (!q) return textImg(ind.wrongFormat(prefix))
+                if (!isUrl(q)) return textImg(ind.wrongFormat(prefix))
+                if (!q.includes('tiktok.com')) return textImg(ind.wrongFormat(prefix))
+                await textImg(ind.wait())
+                xfar.Tiktok(args[1]).then(async data => {
+                    let txt = `*----「 TIKTOK DOWNLOADER 」----*\n\n`
+                    txt += `*📫 Title :* ${data.title}\n`
+                    txt += `*🎞️ Type :* ${data.medias[0].extension}\n`
+                    txt += `*📟 Quality :* ${data.medias[0].quality}\n`
+                    txt += `*💾 Size :* ${data.medias[0].formattedSize}\n`
+                    txt += `*📚 Url :* ${data.url}`
+                    sendFileFromUrl(from, data.medias[0].url, txt, msg)
+                })
+                .catch((err) => {
+                    for (let x of ownerNumber) {
+                        sendMess(x, `${command.split(prefix)[1]} Error: \n\n` + err)
+                    }
+                    textImg(ind.err())
+                })
+            break
+           case 'cot': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.nowatermark },
+                    caption: `Download From ${text}`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+	    case 'pepeq':{
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
   if (!q) return reply('Where is the link?')
@@ -8691,13 +8711,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 XeonBotInc.sendContact(m.chat, global.vcardowner, m)
             }
             break
-            case 'iqra': {
-		oh = `Example : ${prefix + command} 3\n\nIQRA Yang tersedia : 1,2,3,4,5,6`
-		if (!text) throw oh
-		yy = await getBuffer(`https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra${text}`)
-		XeonBotInc.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf`}, {quoted:m}).catch ((err) => m.reply(oh))
-		}
-		break
   case 'setmenu': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -8755,6 +8768,15 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 }
             }
             break
+           case 'donate':
+reply(`「 Donasi • SYN STORE 」
+│ • https://saweria.co/synstore
+│ • Dana [089637210173]
+│ • OVO [089637210173]
+│ • BCA [5725651080]
+│ • GOPAY [089637210173]
+╰────`)
+break
 case 'request': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -8780,7 +8802,7 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
 case 'sc': case 'script': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nDont forget to donate 🍜\nsaweria ; https://saweria.co/Dhanzp`
+teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nDont forget to donate 🍜`
 let buttons = [
 {buttonId: `menu`, buttonText: {displayText: 'Menu 🌺'}, type: 1}
 ]
@@ -8829,7 +8851,7 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
                                 }  
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Owner 🗿',
+                                    displayText: 'Owner 🤣',
                                     id: 'owner'
                                 }
                             }]
@@ -8850,7 +8872,7 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
             { urlButton: { displayText: `Script 🍜`, url: `${botscript}` } },
             { quickReplyButton: { displayText: `All Menu 🍱`, id: 'allmenu'} },
             { quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
-            { quickReplyButton: { displayText: `Owner 🗿`, id: 'owner'} }
+            { quickReplyButton: { displayText: `Owner 🤣`, id: 'owner'} }
         	]
         	XeonBotInc.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
                         }
@@ -8962,7 +8984,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										{
 										"title": "Game Menu 🎮",
 										"description": "Displays The List Of Game Features",
-										"rowId": `${prefix}gamemenu`
+										"rowId": `${prefix}indomenu`
 									},
 										{
 											"title": "Convert Menu ⚒️",
@@ -9014,6 +9036,8 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break
 case 'allmenu':
+         buff = fs.readFilesSync('.audio/jepang.mp3') //ANJAYY
+        XeonBotInc.sendMessage(from, buff, audio, { qouted: mek })
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'All Menu')
